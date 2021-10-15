@@ -1,7 +1,15 @@
-import '../styles/globals.css'
+import GlobalStyle from '../styles/GlobalStyles';
+import { PokemonProvider } from '../context/pokemonData';
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      {/* <GlobalStyle /> */}
+      <PokemonProvider>
+        <Component {...pageProps} />
+      </PokemonProvider>
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;
